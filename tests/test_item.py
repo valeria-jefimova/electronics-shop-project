@@ -37,11 +37,17 @@ def test_apply_discount(item):
     assert item.price == 10000
 
 
-def test_instantiate_from_csv():  # проверка создания экземпляров из items.csv
+def test_instantiate_from_csv():  #
+    """
+    Проверка создания экземпляров из items.csv
+    """
     Item.all.clear()
     Item.instantiate_from_csv()
     assert len(Item.all) == 5
 
 
 def test_string_to_number():
+    """
+    Проверка возвращающего число из числа-строки
+    """
     assert Item.string_to_number('56.879') == 5
