@@ -11,7 +11,7 @@ def item():
 
 def test_item_init(item):
     """
-    Тест инициации класса Item
+    Тест инициализации класса Item
     """
     assert item.name == 'Смартфон'
     assert item.price == 10000
