@@ -21,6 +21,12 @@ def test_item_init(item):
     assert isinstance(item.quantity, int)
 
 
+def test_name(item):
+    """Проверка изменения имени товара"""
+    with pytest.raises(ValueError, match="Длина наименования товара превышает 10 символов"):
+        item.name = "СуперпуперСмартфон"
+
+
 def test_calculate_total_price(item):
     """
     Тест расчета общей стоимости конкретного товара
