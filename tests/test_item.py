@@ -57,3 +57,13 @@ def test_string_to_number():
     Проверка возвращающего число из числа-строки
     """
     assert Item.string_to_number('56.879') == 5
+
+
+def test___repr__(item):
+        assert repr(item) == "Item('Смартфон', 10000, 20)"
+        assert isinstance(repr(item), str)
+
+
+def test___str__(item):
+        assert str(item) == 'Смартфон'
+        assert isinstance(str(item), str)

@@ -58,6 +58,17 @@ class Item:
         """Статический метод, возвращающий число из числа-строки"""
         return round(int(value[0]), 2)
 
+    def __repr__(self) -> str:
+        """Магический метод __repr__ переопределение"""
+        #self.__class__.name - property object at 0x10a1915d0>
+        #self.__class__.__name__ - 'Item_
+        return f"{self.__class__.__name__}('{self.__name}', {int(self.price)}, {self.quantity})"
+
+    def __str__(self) -> str:
+        return f"{self.name}"
+
+
+
 
 
 
