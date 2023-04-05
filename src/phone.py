@@ -15,18 +15,12 @@ class Phone(Item):
         return self.__number_of_sim
 
     @number_of_sim.setter
-    def number_of_sim(self, number_of_sim: int):
-        if number_of_sim > 0:
-            self.__number_of_sim = number_of_sim
-        else:
+    def number_of_sim(self, value):
+        if value <= 0:
             raise ValueError('Количество физических SIM-карт должно быть целым числом больше нуля.')
+        self.__number_of_sim = value
 
     def __repr__(self):
+        # data = super().__repr__()
+        # return data.replace(')', f', {self.number_of_sim}
         return f"{self.__class__.__name__}('{self.name}', {int(self.price)}, {self.quantity}, {self.number_of_sim})"
-
-    def __add__(self, other):
-        if isinstance(other, Phone):
-            raise ValueError('Складывать можно только объекты Phone и дочерние от них')
-        return self.quantity + other.quantity
-
-
