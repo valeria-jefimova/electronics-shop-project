@@ -2,6 +2,7 @@
 import pytest
 
 from src.item import Item
+from src.phone import Phone
 
 
 @pytest.fixture
@@ -67,3 +68,5 @@ def test___repr__(item):
 def test___str__(item):
         assert str(item) == 'Смартфон'
         assert isinstance(str(item), str)
+
+
